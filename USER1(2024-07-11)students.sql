@@ -85,6 +85,23 @@ UPDATE tbl_student
 set st_tel = '010-3333-3456'
 WHERE st_num = '2400003';
 
+Drop Table tbl_student;
 
+CREATE TABLE tbl_student(
+st_num	VARCHAR2(5)		PRIMARY KEY,
+st_name	nVARCHAR2(20)	NOT NULL,	
+st_dept	nVARCHAR2(20)	NOT NULL,	
+st_grade	NUMBER		,
+st_tel	nVARCHAR2(20)	NOT NULL,	
+st_adress	nVARCHAR2(125)		
+);
+--학생데이터 중에서 학과가 국사학과 인 학생의 리스트를 보여라
+-- 전체 데이터중에서 특정한 조건(WHERE)을 부여하여
+-- 리스트의 ㅇ일부만 출력하는 것을 SELECTION 이라고 한다
+SELECT * FROM tbl_student WHERE  st_dept ='국사학과';
+
+--학생데이터 중에서 학생이름,전화번호 항목만 보여주고 이름 순으로 정렬하여 보여라
+
+SELECT st_name,st_tel FROM tbl_student ORDER BY st_name;
 
 
